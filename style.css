@@ -64,6 +64,10 @@ input:focus {
     padding: 0 12px;
 }
 
+.white__row {
+    background-color: transparent !important;
+}
+
 .click {
     cursor: pointer;
     transition: all 300ms ease;
@@ -120,12 +124,50 @@ LANDING PAGE
 
 */
 
+/*
+
+DEFAULT
+
+*/
+
 #landing-page {
     min-height: 100vh;
 }
 
+.landing-page {
+    position: relative;
+    min-height: 100vh;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 128, 0, 0.25);
+    pointer-events: none;
+}
+
+.background__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px);
+    transform: scale(1.05);
+}
+
 .nav {
-    height: 100px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -134,25 +176,26 @@ LANDING PAGE
 .nav__link--list {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 25px;
 }
 
 .nav__link--primary {
-    padding: 10px 20px;
+    padding: 6px 14px;
     border-radius: 20px;
     background-color: green;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 figure {
     display: flex;
     align-items: center;
     gap: 20px;
+    z-index: 100;
 }
 
 figure img {
-    width: 60px;
+    width: 40px;
     height: auto;
 }
 
@@ -162,8 +205,24 @@ HEADER
 
 */
 
+/*
+
+DEFAULT
+
+*/
+
 .header {
     margin-top: 100px;
+    text-align: center;
+}
+
+.header__search {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 100px;
 }
 
 .header__para {
@@ -218,10 +277,69 @@ input:focus {
     transform: scale(0.8);
 }
 
+.header__input {
+    font-size: 18px;
+}
+
 .movie__background {
     width: 100%;
     height: auto;
     margin-bottom: 100px;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.header__content--main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__search {
+    position: relative;
+    font-size: 25px;
+    width: 400px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.header__search--input {
+    width: 100%;
+    height: 100%;
+    padding: 0 45px 0 16px;
+    font-size: 25px;
+    border-radius: 25px;
+    transition: all 300ms ease;
+}
+
+.header__search--icon {
+    position: absolute;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: green;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 300ms ease;
+}
+
+/*
+
+SEARCH RESULTS
+
+*/
+
+.results__titles {
+    display: flex;
 }
 
 /*
@@ -248,4 +366,48 @@ FOOTER
     align-items: center;
     margin-top: 20px;
     margin-bottom: 40px;
+}
+
+/*
+
+MOVIES.HTML File Styling
+
+*/
+
+.landing-page--movies {
+    position: relative;
+    overflow: hidden;
+    height: 30vh;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0 20px 0;
+}
+
+.header--movies {
+    margin-top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header__search--movies {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    height: 42px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.header__search--movies .header__search--input {
+    width: 100%;
+    height: 100%;
+    padding: 0 45px 0 16px;
+    font-size: 20px;
+    transition: all 300ms ease;
 }
