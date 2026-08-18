@@ -42,9 +42,9 @@
                 <h2 class="header__para">Find your favorite movies <b class="highlight">here!</b></h2>
             </div>
             <div class="header__search row">
-                <input class="header__input" type="text" class="input" placeholder="Search by Movie title, year, or type.">
+                <input class="header__input" type="text" class="input" onchange="storeID(id)" placeholder="Search by Movie title, year, or type.">
                 <div class="header__btn">
-                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="search-btn" onclick="storeID(id)"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
         </header>

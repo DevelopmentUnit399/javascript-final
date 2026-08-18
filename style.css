@@ -332,6 +332,10 @@ input:focus {
     transition: all 300ms ease;
 }
 
+.search__results {
+    padding: 20px 0;
+}
+
 /*
 
 SEARCH RESULTS
@@ -340,6 +344,74 @@ SEARCH RESULTS
 
 .results__titles {
     display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.results__title {
+    width: 200px;
+}
+
+.results__search {
+    width: 200px;
+}
+
+/*
+
+MOVIE CARDS
+
+*/
+
+.cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.card {
+    width: 200px;
+}
+
+.card__image {
+    width: 100%;
+    height: auto;
+}
+
+.card__title {
+    font-size: 30px;
+    font-weight: 800;
+    padding: 10px 0;
+}
+
+.card__info--card {
+    display: flex;
+    gap: 5px;
+    padding: 5px 0;
+}
+
+.card__info--card i, .card__actors--card i {
+    width: 5%;
+}
+
+.card__desc {
+    font-size: 15px;
+    font-weight: 400;
+    width: 80%;
+}
+
+.card__actors--card {
+    display: flex;
+    gap: 5px;
+    padding: 5px 0;
+}
+
+.card__actors {
+    font-size: 15px;
+    font-weight: 400;
+    width: 80%;
 }
 
 /*

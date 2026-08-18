@@ -47,7 +47,7 @@
                 <h1 class="title">Browse Our Movies</h1>
                 <div class="header__content--main">
                     <div class="header__search header__search--movies">
-                        <input class="header__search--input" type="text" placeholder="Search">
+                        <input class="header__search--input" type="text" placeholder="Search by Movie title, year, or type." onchange="onSearchChange(event)">
                         <button class="header__search--icon click">
                             <i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
@@ -58,11 +58,22 @@
 
     <section class="search__results">
             <div class="row white__row">
-                <div class="results__titles"></div>
-                <h2 class="results__title">Search results for: </h2>
-                <h2 class="results__search highlight">"2026"</h2>
+                <div class="results__titles">
+                    <h2 class="results__title">Search results for: </h2>
+                    <h2 class="results__search highlight">"2026"</h2>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="movie__card">
+        <div class="row">
+            <div class="cards">
+
+                </div>
+
+            </div>
+        </div>
     </section>
 </body>
 </html>
