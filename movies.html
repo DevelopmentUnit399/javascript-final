@@ -17,19 +17,21 @@
 
         <div class="nav row">
             <figure>
-                <img src="assets/images/main-logo.png" alt="" class="personal-logo">
-                <h2 class="personal-text">Movies</h2>
+                <img src="assets/images/main-logo.png" alt="" class="personal-logo--movies">
+                <h2 class="personal-text nav__link--white">Movies</h2>
             </figure>
             <ul class="nav__link--list">
                 <li class="nav__link">
-                    <a href="#" class="
+                    <a href="/index.html" class="
                     nav__link--anchor
-                    link__hover-effect">Home</a>
+                    link__hover-effect
+                    nav__link--white">Home</a>
                 </li>
                 <li class="nav__link">
-                    <a href="" class="
+                    <a href="#" class="
                     nav__link--anchor
-                    link__hover-effect">Find Your Movie</a>
+                    link__hover-effect
+                    nav__link--white">Find Your Movie</a>
                 </li>
                 <li class="nav__link">
                     <button class="
@@ -44,7 +46,7 @@
 
         <header class="header header--movies">
             <div class="header__content row">
-                <h1 class="title">Browse Our Movies</h1>
+                <h1 class="title nav__link--white">Browse Our Movies</h1>
                 <div class="header__content--main">
                     <div class="header__search header__search--movies">
                         <input class="header__search--input" type="text" placeholder="Search by Movie title, year, or type." onchange="onSearchChange(event)">
@@ -62,18 +64,89 @@
                     <h2 class="results__title">Search results for: </h2>
                     <h2 class="results__search highlight">"2026"</h2>
                 </div>
+
+                 <section class="filter__section">
+                    <div class="row filter__row">
+                        <!-- Limit Dropdown -->
+                         <div class="filter__group">
+                            <label for="limit" class="filter__label">Show:</label>
+                            <select id="limit" class="filter__select" onchange="onLimitChange(event)">
+                                <option value="6" selected>6 results</option>
+                                <option value="12">12 results</option>
+                                <option value="18">18 results</option>
+                                <option value="20">20 results</option>
+                                <option value="50">50 results</option>
+                                <option value="100">100 results</option>
+                            </select>
+                         </div>
+
+                         <!-- Sort Dropdown -->
+                        <label for="filter" class="filter__label">Sort By:</label>
+                        <select id="filter" class="filter__select" onchange="onFilterChange(event)">
+                            <option value="" disabled selected>Select sorting</option>
+                            <option value="RATING_DESC">Rating (High to Low)</option>
+                            <option value="RATING_ASC">Rating (Low to High)</option>
+                            <option value="YEAR_DESC">Release Year (Newest)</option>
+                            <option value="YEAR_ASC">Release Year (Oldest)</option>
+                            <option value="TITLE_ASC">Alphabetical (A - Z)</option>
+                            <option value="TITLE_DESC">Alphabetical (Z - A)</option>
+                        </select>
+                    </div>
+                </section>
             </div>
         </div>
     </section>
 
+    <div id="movie-modal" class="modal">
+        <div class="modal__overlay" onclick="closeModal()"></div>
+        <div class="modal__content">
+            <button class="modal__close" onclick="closeModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-body" class="modal__body">
+
+            </div>
+        </div>
+    </div>
+
     <section class="movie__card">
         <div class="row">
             <div class="cards">
-
+                    <i class="fas fa-spinner movies__loading--spinner"></i>
                 </div>
 
             </div>
         </div>
     </section>
+
+    <footer class="footer--movies">
+        <div class="row footer__row">
+            <figure>
+                <img src="assets/images/main-logo.png" alt="" class="footer__logo--img">
+                <h2 class="personal-text">Movies</h2>
+            </figure>
+
+            <div class="footer__nav">
+                <div class="footer__nav--list">
+                    <a href="/index.html" class="
+                    nav__link--anchor
+                    link__hover-effect">Home</a>
+                </div>
+                <div class="footer__nav--list">
+                    <a href="#" class="nav__link--anchor
+                    link__hover-effect">Find Your Movie</a>
+                </div>
+                <div class="footer__nav--list">
+                    <button class="nav__link--anchor
+                    link__hover-effect
+                    nav__link--primary
+                    footer__nav--primary
+                    no__click">Contact</button>
+                </div>
+            </div>
+
+            <div class="footer__copyright">Copyright © 2026 Garrett Uichanco</div>
+        </div>
+    </footer>
 </body>
 </html>

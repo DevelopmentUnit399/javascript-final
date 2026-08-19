@@ -118,6 +118,11 @@ input:focus {
     display: none !important;
 }
 
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
 /*
 
 LANDING PAGE
@@ -185,6 +190,10 @@ DEFAULT
     background-color: green;
     color: white;
     font-size: 15px;
+}
+
+.nav__link--white {
+    color: white;
 }
 
 figure {
@@ -336,11 +345,19 @@ input:focus {
     padding: 20px 0;
 }
 
+.personal-logo--movies {
+    filter: invert(1);
+}
+
 /*
 
 SEARCH RESULTS
 
 */
+
+.search__results {
+    background-color: transparent;
+}
 
 .results__titles {
     display: flex;
@@ -378,37 +395,50 @@ MOVIE CARDS
 .card__image {
     width: 100%;
     height: auto;
+    transition: all 300ms ease;
+}
+
+.card__image:hover {
+    scale: 1.05;
+}
+
+.image__click {
+    cursor: pointer;
+}
+
+.image__click:active {
+    scale: 0.9;
 }
 
 .card__title {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 800;
     padding: 10px 0;
 }
 
-.card__info--card {
+.card__rating--card {
     display: flex;
     gap: 5px;
     padding: 5px 0;
 }
 
-.card__info--card i, .card__actors--card i {
+.card__rating--card i, .card__released--card i {
     width: 5%;
 }
 
-.card__desc {
+.card__rating--text {
     font-size: 15px;
     font-weight: 400;
     width: 80%;
 }
 
-.card__actors--card {
+.card__released--card {
     display: flex;
     gap: 5px;
     padding: 5px 0;
 }
 
-.card__actors {
+.card__released--text {
     font-size: 15px;
     font-weight: 400;
     width: 80%;
@@ -416,9 +446,57 @@ MOVIE CARDS
 
 /*
 
+FILTER SETTINGS
+
+*/
+
+.filter__section {
+    background-color: transparent;
+    padding: 20px 0;
+}
+
+.filter__row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter__label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.filter__select {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #dcdfe6;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all 300ms ease;
+}
+
+.filter__select:hover {
+    border-color: green;
+}
+
+.filter__group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/*
+
 FOOTER
 
 */
+
+.footer--movies {
+    background-color: lightgray;
+}
 
 .footer__row {
     display: flex;
@@ -438,6 +516,109 @@ FOOTER
     align-items: center;
     margin-top: 20px;
     margin-bottom: 40px;
+}
+
+.footer__copyright {
+    padding-bottom: 40px;
+}
+
+/*
+
+MODAL STYLES
+
+*/
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.modal--open {
+    display: flex;
+}
+
+.modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal__content {
+    position: relative;
+    background-color: #fff;
+    width: 90%;
+    max-width: 750px;
+    max-height: 85vh;
+    border-radius: 12px;
+    padding: 30px;
+    overflow-y: auto;
+    z-index: 1010;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal__details {
+    display: flex;
+    gap: 25px;
+}
+
+.modal__poster {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.modal__info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal__title {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.modal__meta {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.modal__overview {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .modal__details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 /*
@@ -482,4 +663,53 @@ MOVIES.HTML File Styling
     padding: 0 45px 0 16px;
     font-size: 20px;
     transition: all 300ms ease;
+}
+
+/*
+
+MOVIES PAGE
+
+*/
+
+.no-movies {
+    font-size: 40px;
+    padding-top: 50px;
+    padding-bottom: 200px;
+}
+
+.movie__card {
+    background-color: transparent;
+}
+
+.movies__loading {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    font-size: 60px;
+    color: green;
+}
+
+.movies__loading--spinner {
+    display: none !important;
+    padding: 50px 0 !important;
+}
+
+.movies__loading .movies__loading--spinner {
+    display: block !important;
+}
+
+.fa-spinner {
+    animation: rotate 600ms infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

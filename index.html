@@ -22,7 +22,7 @@
                     link__hover-effect">Home</a>
                 </li>
                 <li class="nav__link">
-                    <a href="" class="
+                    <a href="/movies.html" class="
                     nav__link--anchor
                     link__hover-effect">Find Your Movie</a>
                 </li>
@@ -42,10 +42,18 @@
                 <h2 class="header__para">Find your favorite movies <b class="highlight">here!</b></h2>
             </div>
             <div class="header__search row">
-                <input class="header__input" type="text" class="input" onchange="storeID(id)" placeholder="Search by Movie title, year, or type.">
-                <div class="header__btn">
-                    <button class="search-btn" onclick="storeID(id)"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
+                <input
+                    id="landing-search"
+                    class="header__input"
+                    type="text"
+                    placeholder="Search by Movie title"
+                    onkeydown="onLandingSearch(event)"
+                    >
+                    <div class="header__btn">
+                        <button class="search-btn" onclick="executeLandingSearch()">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
             </div>
         </header>
 
@@ -68,7 +76,7 @@
                     link__hover-effect">Home</a>
                 </div>
                 <div class="footer__nav--list">
-                    <a href="#" class="nav__link--anchor
+                    <a href="/movies.html" class="nav__link--anchor
                     link__hover-effect">Find Your Movie</a>
                 </div>
                 <div class="footer__nav--list">
